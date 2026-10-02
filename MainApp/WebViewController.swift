@@ -9,12 +9,13 @@
 import UIKit
 import WebKit
 
+enum HostedPage: String {
+  case cyanBack = "index.html"
+  case redBack = "alt.html"
+}
+
 // We subclass for one critical reason - by default, WebViews may become first responder...
 // a detail that is really, REALLY bad for a WebView in a keyboard.
-//
-// Minor reference here: https://stackoverflow.com/questions/39829863/can-a-uiwebview-handle-user-interaction-without-becoming-first-responder
-//
-// Confirmed issue existed within app during workaround for https://github.com/keymanapp/keyman/issues/2716
 class WebView: WKWebView {
   override public var canBecomeFirstResponder: Bool {
     return false;
@@ -117,18 +118,32 @@ class WebViewController: UIViewController, WKNavigationDelegate {
 
     view = webView
 
-    loadKeyboard()
+    loadPage()
   }
+  
+  public var activePage: HostedPage? = nil
 
-  // MARK: - Show/hide views
-  func loadKeyboard() {
-    if webView!.url?.absoluteString == URL(fileURLWithPath: "index.html", relativeTo: WebViewController.siteBundle.bundleURL).absoluteString {
-      let hostPageFileUrl = URL(fileURLWithPath: "alt.html", relativeTo: WebViewController.siteBundle.bundleURL)
-      webView!.loadFileURL(hostPageFileUrl, allowingReadAccessTo: WebViewController.siteBundle.bundleURL)
-    } else {
-      let hostPageFileUrl = URL(fileURLWithPath: "index.html", relativeTo: WebViewController.siteBundle.bundleURL)
-      webView!.loadFileURL(hostPageFileUrl, allowingReadAccessTo: WebViewController.siteBundle.bundleURL)
+  public var selectedPage: HostedPage {
+    get {
+      // Retrieve kbd height from app group!
+      let userDefaults = UserDefaults(suiteName: DummyInputViewController.appGroup)!
+      
+      let pageString = userDefaults.string(forKey: "hostedPage")
+      
+      if pageString != nil {
+        return HostedPage(rawValue: pageString!)!
+      } else {
+        return HostedPage.cyanBack
+      }
     }
+  }
+  
+  // MARK: - Show/hide views
+  func loadPage() {
+    activePage = selectedPage
+    
+    let hostPageFileUrl = URL(fileURLWithPath: activePage!.rawValue, relativeTo: WebViewController.siteBundle.bundleURL)
+    webView!.loadFileURL(hostPageFileUrl, allowingReadAccessTo: WebViewController.siteBundle.bundleURL)
   }
 
   // Very useful for immediately adjusting the WebView's properties upon loading.

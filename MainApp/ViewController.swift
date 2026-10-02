@@ -125,6 +125,19 @@ class ViewController: UIViewController {
   }
   
   @IBAction func swapHostedPage(_ sender: Any) {
+    let userDefaults = UserDefaults(suiteName: DummyInputViewController.appGroup)!
+    
+    let page = userDefaults.string(forKey: "hostedPage")
+    
+    let value = page != nil ? HostedPage(rawValue: page!) : HostedPage.cyanBack
+    
+    // Set WebView page via app group!
+    if(value == HostedPage.cyanBack) {
+      userDefaults.set(HostedPage.redBack.rawValue, forKey: "hostedPage")
+    } else {
+      userDefaults.set(HostedPage.cyanBack.rawValue, forKey: "hostedPage")
+    }
+    
     ivc.forceWebViewReload()
   }
 }

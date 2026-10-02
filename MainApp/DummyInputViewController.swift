@@ -12,7 +12,6 @@ import UIKit
 private class CustomInputView: UIInputView {
   var height: CGFloat
   var inset: CGFloat
-//  var topGuardView: UIView!
   var innerView: UIView!
   var insetView: UIView!
 
@@ -65,11 +64,6 @@ private class CustomInputView: UIInputView {
   }
 
   func load() {
-//    topGuardView = UIView()
-//    topGuardView.backgroundColor = UIColor.systemBackground
-//    topGuardView.translatesAutoresizingMaskIntoConstraints = false
-//    self.addSubview(topGuardView)
-    
     innerView = webViewController.view
     innerView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -112,13 +106,8 @@ class DummyInputViewController: UIInputViewController {
   var asSystemKeyboard: Bool = false
   public var webViewController: WebViewController!
 
-  // This is the one used to initialize the keyboard as the app extension, marking "system keyboard" mode.
   convenience init() {
-    // Retrieve kbd height from app group!
-    let userDefaults = UserDefaults(suiteName: DummyInputViewController.appGroup)!
-    let height = userDefaults.float(forKey: "height")
-
-    self.init(height: CGFloat(height))
+    self.init(height: CGFloat(200))
     asSystemKeyboard = true
   }
 
@@ -127,6 +116,15 @@ class DummyInputViewController: UIInputViewController {
     insetHeight = inset
 
     super.init(nibName: nil, bundle: nil)
+    
+    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+      // Fires every 1/10 sec.
+      //
+      
+      if self.webViewController.activePage != self.webViewController.selectedPage {
+        self.webViewController.loadPage()
+      }
+    }
   }
 
   required init?(coder: NSCoder) {
@@ -150,12 +148,6 @@ class DummyInputViewController: UIInputViewController {
 
     // Perform custom UI setup here
     baseView.load()
-
-    // Nope, no dice when trying it later.
-//  open override func viewDidAppear(_ animated: Bool) {
-//    let baseView = self.inputView as! CustomInputView
-//
-//    super.viewDidAppear(animated)
     baseView.setConstraints()
 
     // Adds a very basic "Next keyboard" button to ensure we can always swap keyboards, even on iPhone SE.
@@ -178,6 +170,6 @@ class DummyInputViewController: UIInputViewController {
   }
   
   func forceWebViewReload() {
-    webViewController!.loadKeyboard()
+    webViewController!.loadPage()
   }
 }
