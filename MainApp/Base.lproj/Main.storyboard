@@ -45,23 +45,23 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM4-tQ-Nsr">
-                                <rect key="frame" x="165" y="213" width="139" height="35"/>
+                                <rect key="frame" x="165" y="213" width="139" height="51.5"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Clear keyboard"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Clear keyboard" subtitle="End all editing" titleAlignment="trailing"/>
                                 <connections>
                                     <action selector="clearKeyboardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OXa-xr-wwP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx7-dQ-V9a">
-                                <rect key="frame" x="90" y="299" width="214" height="35"/>
+                                <rect key="frame" x="69" y="401.5" width="235" height="34.5"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Replace in-app keyboard"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Replace in-app UIInputView"/>
                                 <connections>
                                     <action selector="replaceInputView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vki-Nm-BKT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eJ-rQ-X16">
-                                <rect key="frame" x="106" y="256" width="198" height="35"/>
+                                <rect key="frame" x="106" y="272.5" width="198" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Swap active responder"/>
                                 <connections>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeS-md-yR0">
-                                <rect key="frame" x="127" y="342" width="177" height="35"/>
+                                <rect key="frame" x="127" y="315.5" width="177" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Try a content nudge"/>
                                 <connections>
@@ -97,7 +97,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-Xh-QCq">
-                                <rect key="frame" x="131.5" y="385" width="172.5" height="35"/>
+                                <rect key="frame" x="131.5" y="358.5" width="172.5" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reload UIInputView"/>
                                 <connections>
@@ -127,10 +127,10 @@
                             <constraint firstAttribute="trailing" secondItem="MLm-Xh-QCq" secondAttribute="trailing" constant="16" id="c9P-pG-pzA"/>
                             <constraint firstItem="7ji-Ub-hVp" firstAttribute="leading" secondItem="9KI-42-mC0" secondAttribute="trailing" priority="800" constant="16" id="cwW-VR-PO6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UWY-fm-9a1" secondAttribute="trailing" constant="16" id="d3f-o9-8b9"/>
-                            <constraint firstItem="VeS-md-yR0" firstAttribute="top" secondItem="fx7-dQ-V9a" secondAttribute="bottom" constant="8" id="fG8-Ue-q0b"/>
+                            <constraint firstItem="VeS-md-yR0" firstAttribute="top" secondItem="9eJ-rQ-X16" secondAttribute="bottom" constant="8" id="fG8-Ue-q0b"/>
                             <constraint firstItem="9eJ-rQ-X16" firstAttribute="top" secondItem="oM4-tQ-Nsr" secondAttribute="bottom" constant="8" id="gDZ-is-aPM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ztT-XC-1cv" secondAttribute="trailing" constant="16" id="iwV-ox-0qQ"/>
-                            <constraint firstItem="fx7-dQ-V9a" firstAttribute="top" secondItem="9eJ-rQ-X16" secondAttribute="bottom" constant="8" id="lbE-zu-e8f"/>
+                            <constraint firstItem="fx7-dQ-V9a" firstAttribute="top" secondItem="MLm-Xh-QCq" secondAttribute="bottom" constant="8" id="lbE-zu-e8f"/>
                             <constraint firstItem="ztT-XC-1cv" firstAttribute="centerY" secondItem="CQl-Ac-op0" secondAttribute="centerY" id="lcc-YV-XUO"/>
                             <constraint firstItem="CQl-Ac-op0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nyC-2S-mSQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fx7-dQ-V9a" secondAttribute="trailing" constant="16" id="o3y-qR-f8w"/>

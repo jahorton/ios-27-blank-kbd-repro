@@ -30,8 +30,6 @@ class ViewController: UIViewController {
     
     Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
       // Fires every 1/10 sec.
-      //
-      
       self.updateStatusText()
     }
   }
@@ -74,16 +72,14 @@ class ViewController: UIViewController {
   }
   
   func clearKeyboard() {
-    // Is what Keyman for iPhone / iOS calls to complete hiding the keyboard.
-    // Well, that and resignFirstResponder.
-    // Ah.  Its docs aim to resignFirstResponder on the view or a subview if applicable, so yeah, of course there's correlation
     self.view.endEditing(true)
     
     updateStatusText()
   }
   
   @IBAction func swapResponders(_ sender: Any) {
-    // Seems to function the same as `endEditing`.
+    // Seems to function the same as `endEditing` when
+    // calling .become* on the current first responder.
     if systemInput.isFirstResponder {
       systemInput.resignFirstResponder()
       inAppInput.becomeFirstResponder()
@@ -101,8 +97,9 @@ class ViewController: UIViewController {
     updateStatusText()
   }
   
-  // AI suggestion, tidied up
-  func kickstartWebViewRendering() {
+  @IBAction func tryContentNudge(_ sender: Any) {
+    // AI suggestion, tidied up
+    
     // 1. Tell UIKit the layout needs redrawing
     let webView = ivc.webViewController.webView!
     webView.setNeedsLayout()
@@ -116,11 +113,7 @@ class ViewController: UIViewController {
     DispatchQueue.main.async {
       webView.scrollView.setContentOffset(currentOffset, animated: false)
     }
-    updateStatusText()
-  }
-  
-  @IBAction func tryContentNudge(_ sender: Any) {
-    kickstartWebViewRendering()
+    
     updateStatusText()
   }
   

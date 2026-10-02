@@ -12,10 +12,9 @@ import UIKit
 private class CustomInputView: UIInputView {
   var height: CGFloat
   var inset: CGFloat
+  
   var innerView: UIView!
   var insetView: UIView!
-
-  var insetHeightLabel: UILabel!
   
   var webViewController: WebViewController!
 
@@ -29,7 +28,7 @@ private class CustomInputView: UIInputView {
 
   override var intrinsicContentSize: CGSize {
     get {
-      return CGSize(width: UIScreen.main.bounds.width, height: height > 0 ? height + inset : 100)
+      return CGSize(width: UIScreen.main.bounds.width, height: height > 0 ? height + inset : 200)
     }
   }
 
@@ -73,11 +72,6 @@ private class CustomInputView: UIInputView {
     insetView.backgroundColor = .green
     insetView.translatesAutoresizingMaskIntoConstraints = false
 
-    insetHeightLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    insetHeightLabel.text = "(0.0, \(inset))"
-
-    insetView.addSubview(insetHeightLabel)
-
     self.addSubview(insetView)
   }
 }
@@ -89,38 +83,22 @@ class DummyInputViewController: UIInputViewController {
   // The app group used to access common UserDefaults settings.
   static let appGroup = "group.horton.kmtesting"
 
-  static var keyboardHeightDefault: CGFloat {
-    get {
-      let userDefaults = UserDefaults(suiteName: DummyInputViewController.appGroup)!
-      return (userDefaults.object(forKey: "height") as? CGFloat) ?? 0
-    }
-
-    set(value) {
-      let userDefaults = UserDefaults(suiteName: DummyInputViewController.appGroup)!
-      userDefaults.set(value, forKey: "height")
-    }
-  }
-
   @IBOutlet var nextKeyboardButton: UIButton!
-
-  var asSystemKeyboard: Bool = false
+  
   public var webViewController: WebViewController!
 
   convenience init() {
     self.init(height: CGFloat(200))
-    asSystemKeyboard = true
   }
 
   init(height: CGFloat, inset: CGFloat = 0) {
-    kbdHeight = height
-    insetHeight = inset
+    kbdHeight = 160
+    insetHeight = 40
 
     super.init(nibName: nil, bundle: nil)
     
     Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
       // Fires every 1/10 sec.
-      //
-      
       if self.webViewController.activePage != self.webViewController.selectedPage {
         self.webViewController.loadPage()
       }
@@ -142,14 +120,24 @@ class DummyInputViewController: UIInputViewController {
 
     self.inputView = baseView
   }
+  
+  func forceWebViewReload() {
+    webViewController!.loadPage()
+  }
 
   open override func viewDidLoad() {
     let baseView = self.inputView as! CustomInputView
-
+    
     // Perform custom UI setup here
     baseView.load()
     baseView.setConstraints()
-
+    
+    if(self.needsInputModeSwitchKey) {
+      addNextKeyboardButton(to: baseView)
+    }
+  }
+  
+  private func addNextKeyboardButton(to baseView: CustomInputView) {
     // Adds a very basic "Next keyboard" button to ensure we can always swap keyboards, even on iPhone SE.
     self.nextKeyboardButton = UIButton(type: .system)
 
@@ -159,17 +147,9 @@ class DummyInputViewController: UIInputViewController {
 
     self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
 
-    self.view.addSubview(self.nextKeyboardButton)
+    baseView.insetView.addSubview(self.nextKeyboardButton)
 
-    var guide: UILayoutGuide
-    guide = self.view.safeAreaLayoutGuide
-    self.nextKeyboardButton.isHidden = !self.needsInputModeSwitchKey || !asSystemKeyboard
-
-    self.nextKeyboardButton.leftAnchor.constraint(equalTo: guide.leftAnchor).isActive = true
-    self.nextKeyboardButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-  }
-  
-  func forceWebViewReload() {
-    webViewController!.loadPage()
+    self.nextKeyboardButton.leftAnchor.constraint(equalTo: baseView.insetView.leftAnchor).isActive = true
+    self.nextKeyboardButton.bottomAnchor.constraint(equalTo: baseView.insetView.bottomAnchor).isActive = true
   }
 }

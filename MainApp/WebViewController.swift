@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import OSLog
 
 enum HostedPage: String {
   case cyanBack = "index.html"
@@ -44,39 +45,13 @@ class WebViewController: UIViewController, WKNavigationDelegate {
   init() {
     super.init(nibName: nil, bundle: nil)
     _ = view
-
-//    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
-//      // Fires every 1/10 sec.
-//
-//      self.checkVisualLiveness()
-//    }
   }
 
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-
-//  @objc func fixLayout() {
-//    view.setNeedsLayout()
-//    view.layoutIfNeeded()
-//  }
-
   override func viewWillLayoutSubviews() {
     kbSize = view.bounds.size
-  }
-
-  open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-    super.viewWillTransition(to: size, with: coordinator)
-
-//    coordinator.animateAlongsideTransition(in: nil, animation: {
-//      _ in
-//        self.fixLayout()
-//    }, completion: {
-//      _ in
-//      // When going from landscape to portrait, the value is often not properly set until the end of the call chain.
-//      // A simple, ultra-short timer allows us to quickly rectify the value in these cases to correct the keyboard.
-//      Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.fixLayout), userInfo: nil, repeats: false)
-//    })
   }
 
   override func loadView() {
@@ -149,44 +124,11 @@ class WebViewController: UIViewController, WKNavigationDelegate {
   // Very useful for immediately adjusting the WebView's properties upon loading.
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-//    fixLayout()
-
-    // Initialize the keyboard's size/scale.  In iOS 13 (at least), the system
-    // keyboard's width will be set at this stage, but not in viewWillAppear.
     kbSize = view.bounds.size
   }
 
-  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-    guard let _ = webView.url else {
-      return
-    }
-  }
-
   func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+    os_log("Web content process terminated - reloading")
     webView.reload()
   }
-
-  // // AI stuff...
-  // func checkVisualLiveness() {
-  //   // 1. If it's not even attached to a window, skip the check
-  //   guard webView?.window != nil else { return }
-
-  //   // 2. Try to force a lightweight snapshot of the view's current bounds.
-  //   // If the GPU layer is broken or deadlocked, this will fail or throw an exception.
-  //   let snapshotView = webView!.snapshotView(afterScreenUpdates: false)
-
-  //   // I have gotten this to fire once early on... but the "forceVisualReset" part has no effect.
-  //   if snapshotView == nil {
-  //     print("🚨 Visual layer stall detected: Unable to capture view snapshot.")
-  //     forceVisualReset()
-  //   }
-  // }
-
-  // private func forceVisualReset() {
-  //   // A standard .reload() might not be enough if the CALayer tree is corrupted.
-  //   // Toggling the layout or content visibility forces UIKit to reconnect to the window server.
-  //   webView!.setNeedsLayout()
-  //   webView!.layoutIfNeeded()
-  //   webView!.reload()
-  // }
 }

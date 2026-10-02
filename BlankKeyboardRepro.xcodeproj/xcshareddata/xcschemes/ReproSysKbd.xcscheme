@@ -59,7 +59,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "0"
          BundleIdentifier = "net.joshuahorton.BlankKeyboardRepro"
-         RemotePath = "/Users/jahorton/Library/Developer/CoreSimulator/Devices/6B9BDA4E-8A76-43A6-A0E4-2C4A338E76B1/data/Containers/Bundle/Application/F4689AA2-AF8D-4088-92FE-A0B660EE11A7/KeyboardCalibrator.app">
+         RemotePath = "/Users/jahorton/Library/Developer/CoreSimulator/Devices/6B9BDA4E-8A76-43A6-A0E4-2C4A338E76B1/data/Containers/Bundle/Application/811DA1A4-05CE-4CBD-959C-1044529CBBAD/BlankKeyboardRepro.app">
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
