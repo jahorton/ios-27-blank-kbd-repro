@@ -124,7 +124,7 @@ class ViewController: UIViewController {
     updateStatusText()
   }
   
-  @IBAction func forceWebViewReload(_ sender: Any) {
+  @IBAction func swapHostedPage(_ sender: Any) {
     ivc.forceWebViewReload()
   }
 }

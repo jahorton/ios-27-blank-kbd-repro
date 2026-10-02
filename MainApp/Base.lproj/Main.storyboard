@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="KeyboardCalibrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="BlankKeyboardRepro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Swap hosted page + reload"/>
                                 <connections>
-                                    <action selector="reloadInputView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHZ-Cs-hHc"/>
+                                    <action selector="swapHostedPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SkO-Om-qjt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeS-md-yR0">
@@ -97,11 +97,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-Xh-QCq">
-                                <rect key="frame" x="96" y="385" width="208" height="35"/>
+                                <rect key="frame" x="131.5" y="385" width="172.5" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Force a WebView reload"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reload UIInputView"/>
                                 <connections>
-                                    <action selector="forceWebViewReload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1CV-KE-TAE"/>
+                                    <action selector="reloadInputView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2L8-Xe-RyE"/>
                                 </connections>
                             </button>
                         </subviews>
