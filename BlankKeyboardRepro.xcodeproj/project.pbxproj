@@ -10,7 +10,7 @@
 		CE0CB2DE306D960300F185AA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CB2DD306D95FF00F185AA /* WebViewController.swift */; };
 		CE0CB2E3306D9F6200F185AA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CB2DD306D95FF00F185AA /* WebViewController.swift */; };
 		CE722FDA23CC18E40095F94E /* DummyInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE722FD923CC18E40095F94E /* DummyInputViewController.swift */; };
-		CE7CCC2623CD61300032DF1A /* Calibration.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE7CCC1E23CD61300032DF1A /* Calibration.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE7CCC2623CD61300032DF1A /* ReproSysKbd.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE7CCC1E23CD61300032DF1A /* ReproSysKbd.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE7CCC2A23CD61590032DF1A /* DummyInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE722FD923CC18E40095F94E /* DummyInputViewController.swift */; };
 		CEE8C54B23C84B4B0093480E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8C54A23C84B4B0093480E /* AppDelegate.swift */; };
 		CEE8C54D23C84B4B0093480E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8C54C23C84B4B0093480E /* SceneDelegate.swift */; };
@@ -26,7 +26,7 @@
 			containerPortal = CEE8C53F23C84B4B0093480E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CE7CCC1D23CD61300032DF1A;
-			remoteInfo = Calibration;
+			remoteInfo = ReproSysKbd;
 		};
 		CEE8C55E23C84B4C0093480E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -51,7 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CE7CCC2623CD61300032DF1A /* Calibration.appex in Embed App Extensions */,
+				CE7CCC2623CD61300032DF1A /* ReproSysKbd.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,11 +61,11 @@
 /* Begin PBXFileReference section */
 		CE0CB2DD306D95FF00F185AA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CE722FD923CC18E40095F94E /* DummyInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyInputViewController.swift; sourceTree = "<group>"; };
-		CE7CCC1E23CD61300032DF1A /* Calibration.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Calibration.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7CCC1E23CD61300032DF1A /* ReproSysKbd.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ReproSysKbd.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7CCC2223CD61300032DF1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE7CCC2B23CD61680032DF1A /* Calibration.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calibration.entitlements; sourceTree = "<group>"; };
-		CE7CCC2C23CD61820032DF1A /* KeyboardCalibrator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardCalibrator.entitlements; sourceTree = "<group>"; };
-		CEE8C54723C84B4B0093480E /* KeyboardCalibrator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardCalibrator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7CCC2B23CD61680032DF1A /* ReproSysKbd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReproSysKbd.entitlements; sourceTree = "<group>"; };
+		CE7CCC2C23CD61820032DF1A /* BlankKeyboardRepro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlankKeyboardRepro.entitlements; sourceTree = "<group>"; };
+		CEE8C54723C84B4B0093480E /* BlankKeyboardRepro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlankKeyboardRepro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE8C54A23C84B4B0093480E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE8C54C23C84B4B0093480E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CEE8C54E23C84B4B0093480E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,8 +73,8 @@
 		CEE8C55323C84B4C0093480E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE8C55623C84B4C0093480E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE8C55823C84B4C0093480E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEE8C55D23C84B4C0093480E /* KeyboardCalibratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardCalibratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEE8C56823C84B4C0093480E /* KeyboardCalibratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardCalibratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE8C55D23C84B4C0093480E /* BlankKeyboardReproTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlankKeyboardReproTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE8C56823C84B4C0093480E /* BlankKeyboardReproUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlankKeyboardReproUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -83,7 +83,7 @@
 			membershipExceptions = (
 				Hosted.bundle,
 			);
-			target = CE7CCC1D23CD61300032DF1A /* Calibration */;
+			target = CE7CCC1D23CD61300032DF1A /* ReproSysKbd */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -123,20 +123,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE7CCC1F23CD61300032DF1A /* CalibrationKbd */ = {
+		CE7CCC1F23CD61300032DF1A /* ReproSysKbd */ = {
 			isa = PBXGroup;
 			children = (
-				CE7CCC2B23CD61680032DF1A /* Calibration.entitlements */,
+				CE7CCC2B23CD61680032DF1A /* ReproSysKbd.entitlements */,
 				CE7CCC2223CD61300032DF1A /* Info.plist */,
 			);
-			path = CalibrationKbd;
+			path = ReproSysKbd;
 			sourceTree = "<group>";
 		};
 		CEE8C53E23C84B4B0093480E = {
 			isa = PBXGroup;
 			children = (
-				CEE8C54923C84B4B0093480E /* KeyboardCalibrator */,
-				CE7CCC1F23CD61300032DF1A /* CalibrationKbd */,
+				CEE8C54923C84B4B0093480E /* MainApp */,
+				CE7CCC1F23CD61300032DF1A /* ReproSysKbd */,
 				CEE8C54823C84B4B0093480E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -144,19 +144,19 @@
 		CEE8C54823C84B4B0093480E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEE8C54723C84B4B0093480E /* KeyboardCalibrator.app */,
-				CEE8C55D23C84B4C0093480E /* KeyboardCalibratorTests.xctest */,
-				CEE8C56823C84B4C0093480E /* KeyboardCalibratorUITests.xctest */,
-				CE7CCC1E23CD61300032DF1A /* Calibration.appex */,
+				CEE8C54723C84B4B0093480E /* BlankKeyboardRepro.app */,
+				CEE8C55D23C84B4C0093480E /* BlankKeyboardReproTests.xctest */,
+				CEE8C56823C84B4C0093480E /* BlankKeyboardReproUITests.xctest */,
+				CE7CCC1E23CD61300032DF1A /* ReproSysKbd.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CEE8C54923C84B4B0093480E /* KeyboardCalibrator */ = {
+		CEE8C54923C84B4B0093480E /* MainApp */ = {
 			isa = PBXGroup;
 			children = (
 				CE0CB2DF306D9B1900F185AA /* resources */,
-				CE7CCC2C23CD61820032DF1A /* KeyboardCalibrator.entitlements */,
+				CE7CCC2C23CD61820032DF1A /* BlankKeyboardRepro.entitlements */,
 				CEE8C54A23C84B4B0093480E /* AppDelegate.swift */,
 				CEE8C54C23C84B4B0093480E /* SceneDelegate.swift */,
 				CEE8C54E23C84B4B0093480E /* ViewController.swift */,
@@ -167,15 +167,15 @@
 				CE722FD923CC18E40095F94E /* DummyInputViewController.swift */,
 				CE0CB2DD306D95FF00F185AA /* WebViewController.swift */,
 			);
-			path = KeyboardCalibrator;
+			path = MainApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE7CCC1D23CD61300032DF1A /* Calibration */ = {
+		CE7CCC1D23CD61300032DF1A /* ReproSysKbd */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE7CCC2923CD61300032DF1A /* Build configuration list for PBXNativeTarget "Calibration" */;
+			buildConfigurationList = CE7CCC2923CD61300032DF1A /* Build configuration list for PBXNativeTarget "ReproSysKbd" */;
 			buildPhases = (
 				CE7CCC1A23CD61300032DF1A /* Sources */,
 				CE7CCC1B23CD61300032DF1A /* Frameworks */,
@@ -185,14 +185,14 @@
 			);
 			dependencies = (
 			);
-			name = Calibration;
-			productName = Calibration;
-			productReference = CE7CCC1E23CD61300032DF1A /* Calibration.appex */;
+			name = ReproSysKbd;
+			productName = ReproSysKbd;
+			productReference = CE7CCC1E23CD61300032DF1A /* ReproSysKbd.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		CEE8C54623C84B4B0093480E /* KeyboardCalibrator */ = {
+		CEE8C54623C84B4B0093480E /* BlankKeyboardRepro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEE8C57123C84B4C0093480E /* Build configuration list for PBXNativeTarget "KeyboardCalibrator" */;
+			buildConfigurationList = CEE8C57123C84B4C0093480E /* Build configuration list for PBXNativeTarget "BlankKeyboardRepro" */;
 			buildPhases = (
 				CEE8C54323C84B4B0093480E /* Sources */,
 				CEE8C54423C84B4B0093480E /* Frameworks */,
@@ -207,14 +207,14 @@
 			fileSystemSynchronizedGroups = (
 				CE0CB2DF306D9B1900F185AA /* resources */,
 			);
-			name = KeyboardCalibrator;
+			name = BlankKeyboardRepro;
 			productName = DefaultKeyboardHost;
-			productReference = CEE8C54723C84B4B0093480E /* KeyboardCalibrator.app */;
+			productReference = CEE8C54723C84B4B0093480E /* BlankKeyboardRepro.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CEE8C55C23C84B4C0093480E /* KeyboardCalibratorTests */ = {
+		CEE8C55C23C84B4C0093480E /* BlankKeyboardReproTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEE8C57423C84B4C0093480E /* Build configuration list for PBXNativeTarget "KeyboardCalibratorTests" */;
+			buildConfigurationList = CEE8C57423C84B4C0093480E /* Build configuration list for PBXNativeTarget "BlankKeyboardReproTests" */;
 			buildPhases = (
 				CEE8C55923C84B4C0093480E /* Sources */,
 				CEE8C55A23C84B4C0093480E /* Frameworks */,
@@ -225,14 +225,14 @@
 			dependencies = (
 				CEE8C55F23C84B4C0093480E /* PBXTargetDependency */,
 			);
-			name = KeyboardCalibratorTests;
+			name = BlankKeyboardReproTests;
 			productName = DefaultKeyboardHostTests;
-			productReference = CEE8C55D23C84B4C0093480E /* KeyboardCalibratorTests.xctest */;
+			productReference = CEE8C55D23C84B4C0093480E /* BlankKeyboardReproTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CEE8C56723C84B4C0093480E /* KeyboardCalibratorUITests */ = {
+		CEE8C56723C84B4C0093480E /* BlankKeyboardReproUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEE8C57723C84B4C0093480E /* Build configuration list for PBXNativeTarget "KeyboardCalibratorUITests" */;
+			buildConfigurationList = CEE8C57723C84B4C0093480E /* Build configuration list for PBXNativeTarget "BlankKeyboardReproUITests" */;
 			buildPhases = (
 				CEE8C56423C84B4C0093480E /* Sources */,
 				CEE8C56523C84B4C0093480E /* Frameworks */,
@@ -243,9 +243,9 @@
 			dependencies = (
 				CEE8C56A23C84B4C0093480E /* PBXTargetDependency */,
 			);
-			name = KeyboardCalibratorUITests;
+			name = BlankKeyboardReproUITests;
 			productName = DefaultKeyboardHostUITests;
-			productReference = CEE8C56823C84B4C0093480E /* KeyboardCalibratorUITests.xctest */;
+			productReference = CEE8C56823C84B4C0093480E /* BlankKeyboardReproUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -274,7 +274,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CEE8C54223C84B4B0093480E /* Build configuration list for PBXProject "KeyboardCalibrator" */;
+			buildConfigurationList = CEE8C54223C84B4B0093480E /* Build configuration list for PBXProject "BlankKeyboardRepro" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -287,10 +287,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEE8C54623C84B4B0093480E /* KeyboardCalibrator */,
-				CEE8C55C23C84B4C0093480E /* KeyboardCalibratorTests */,
-				CEE8C56723C84B4C0093480E /* KeyboardCalibratorUITests */,
-				CE7CCC1D23CD61300032DF1A /* Calibration */,
+				CEE8C54623C84B4B0093480E /* BlankKeyboardRepro */,
+				CEE8C55C23C84B4C0093480E /* BlankKeyboardReproTests */,
+				CEE8C56723C84B4C0093480E /* BlankKeyboardReproUITests */,
+				CE7CCC1D23CD61300032DF1A /* ReproSysKbd */,
 			);
 		};
 /* End PBXProject section */
@@ -370,17 +370,17 @@
 /* Begin PBXTargetDependency section */
 		CE7CCC2423CD61300032DF1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE7CCC1D23CD61300032DF1A /* Calibration */;
+			target = CE7CCC1D23CD61300032DF1A /* ReproSysKbd */;
 			targetProxy = CE7CCC2323CD61300032DF1A /* PBXContainerItemProxy */;
 		};
 		CEE8C55F23C84B4C0093480E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEE8C54623C84B4B0093480E /* KeyboardCalibrator */;
+			target = CEE8C54623C84B4B0093480E /* BlankKeyboardRepro */;
 			targetProxy = CEE8C55E23C84B4C0093480E /* PBXContainerItemProxy */;
 		};
 		CEE8C56A23C84B4C0093480E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEE8C54623C84B4B0093480E /* KeyboardCalibrator */;
+			target = CEE8C54623C84B4B0093480E /* BlankKeyboardRepro */;
 			targetProxy = CEE8C56923C84B4C0093480E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -408,17 +408,17 @@
 		CE7CCC2723CD61300032DF1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CalibrationKbd/Calibration.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ReproSysKbd/ReproSysKbd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WHE552KZN5;
-				INFOPLIST_FILE = CalibrationKbd/Info.plist;
+				INFOPLIST_FILE = ReproSysKbd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.joshuahorton.KeyboardCalibrator.Calibration;
+				PRODUCT_BUNDLE_IDENTIFIER = net.joshuahorton.BlankKeyboardRepro.ReproSysKbd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -429,17 +429,17 @@
 		CE7CCC2823CD61300032DF1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CalibrationKbd/Calibration.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ReproSysKbd/ReproSysKbd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WHE552KZN5;
-				INFOPLIST_FILE = CalibrationKbd/Info.plist;
+				INFOPLIST_FILE = ReproSysKbd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.joshuahorton.KeyboardCalibrator.Calibration;
+				PRODUCT_BUNDLE_IDENTIFIER = net.joshuahorton.BlankKeyboardRepro.ReproSysKbd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -566,16 +566,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = KeyboardCalibrator/KeyboardCalibrator.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MainApp/BlankKeyboardRepro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = KeyboardCalibrator/Info.plist;
+				INFOPLIST_FILE = MainApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.joshuahorton.KeyboardCalibrator;
+				PRODUCT_BUNDLE_IDENTIFIER = net.joshuahorton.BlankKeyboardRepro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -587,16 +587,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = KeyboardCalibrator/KeyboardCalibrator.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MainApp/BlankKeyboardRepro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = KeyboardCalibrator/Info.plist;
+				INFOPLIST_FILE = MainApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.joshuahorton.KeyboardCalibrator;
+				PRODUCT_BUNDLE_IDENTIFIER = net.joshuahorton.BlankKeyboardRepro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -621,7 +621,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeyboardCalibrator.app/KeyboardCalibrator";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlankKeyboardRepro.app/BlankKeyboardRepro";
 			};
 			name = Debug;
 		};
@@ -643,7 +643,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeyboardCalibrator.app/KeyboardCalibrator";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlankKeyboardRepro.app/BlankKeyboardRepro";
 			};
 			name = Release;
 		};
@@ -692,7 +692,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE7CCC2923CD61300032DF1A /* Build configuration list for PBXNativeTarget "Calibration" */ = {
+		CE7CCC2923CD61300032DF1A /* Build configuration list for PBXNativeTarget "ReproSysKbd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE7CCC2723CD61300032DF1A /* Debug */,
@@ -701,7 +701,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE8C54223C84B4B0093480E /* Build configuration list for PBXProject "KeyboardCalibrator" */ = {
+		CEE8C54223C84B4B0093480E /* Build configuration list for PBXProject "BlankKeyboardRepro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE8C56F23C84B4C0093480E /* Debug */,
@@ -710,7 +710,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE8C57123C84B4C0093480E /* Build configuration list for PBXNativeTarget "KeyboardCalibrator" */ = {
+		CEE8C57123C84B4C0093480E /* Build configuration list for PBXNativeTarget "BlankKeyboardRepro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE8C57223C84B4C0093480E /* Debug */,
@@ -719,7 +719,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE8C57423C84B4C0093480E /* Build configuration list for PBXNativeTarget "KeyboardCalibratorTests" */ = {
+		CEE8C57423C84B4C0093480E /* Build configuration list for PBXNativeTarget "BlankKeyboardReproTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE8C57523C84B4C0093480E /* Debug */,
@@ -728,7 +728,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE8C57723C84B4C0093480E /* Build configuration list for PBXNativeTarget "KeyboardCalibratorUITests" */ = {
+		CEE8C57723C84B4C0093480E /* Build configuration list for PBXNativeTarget "BlankKeyboardReproUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE8C57823C84B4C0093480E /* Debug */,

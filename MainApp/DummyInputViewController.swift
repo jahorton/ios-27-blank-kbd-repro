@@ -39,29 +39,29 @@ private class CustomInputView: UIInputView {
   }
 
   func setConstraints() {
-    var guide: UILayoutGuide
-
-    guide = self.safeAreaLayoutGuide
-//    
-//    topGuardView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-//    topGuardView.leftAnchor.constraint(equalTo: guide.leftAnchor).isActive = true
-//    topGuardView.rightAnchor.constraint(equalTo: guide.rightAnchor).isActive = true
-//    topGuardView.bottomAnchor.constraint(equalTo: innerView.topAnchor).isActive = true
-
+    let guide = self.safeAreaLayoutGuide
+    var constraints: [NSLayoutConstraint] = []
+    
     if height != 0 {
-      innerView.heightAnchor.constraint(equalToConstant: height).isActive = true
+      constraints.append(innerView.heightAnchor.constraint(equalToConstant: height))
     } else {
-      innerView.heightAnchor.constraint(equalTo: guide.heightAnchor).isActive = true
+      constraints.append(innerView.heightAnchor.constraint(equalTo: guide.heightAnchor))
     }
 
-    innerView.widthAnchor.constraint(equalTo: guide.widthAnchor).isActive = true
-    innerView.leftAnchor.constraint(equalTo: guide.leftAnchor).isActive = true
-    insetView.widthAnchor.constraint(equalTo: guide.widthAnchor).isActive = true
+    constraints.append(innerView.widthAnchor.constraint(equalTo: guide.widthAnchor))
+    constraints.append(innerView.leftAnchor.constraint(equalTo: guide.leftAnchor))
+    constraints.append(insetView.widthAnchor.constraint(equalTo: guide.widthAnchor))
 
-    innerView.bottomAnchor.constraint(equalTo: insetView.topAnchor).isActive = true
+    constraints.append(innerView.bottomAnchor.constraint(equalTo: insetView.topAnchor))
 
-    insetView.heightAnchor.constraint(equalToConstant: inset).isActive = true
-    insetView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+    constraints.append(insetView.heightAnchor.constraint(equalToConstant: inset))
+    constraints.append(insetView.bottomAnchor.constraint(equalTo: guide.bottomAnchor))
+    
+    // Lower the priority slightly below 1000 to prevent layout engine deadlocks
+    constraints.forEach { constraint in
+      constraint.priority = UILayoutPriority(999)
+      constraint.isActive = true
+    }
   }
 
   func load() {
@@ -110,6 +110,7 @@ class DummyInputViewController: UIInputViewController {
   @IBOutlet var nextKeyboardButton: UIButton!
 
   var asSystemKeyboard: Bool = false
+  public var webViewController: WebViewController!
 
   // This is the one used to initialize the keyboard as the app extension, marking "system keyboard" mode.
   convenience init() {
@@ -134,6 +135,7 @@ class DummyInputViewController: UIInputViewController {
 
   open override func loadView() {
     let wvc = WebViewController()
+    webViewController = wvc
     let baseView = CustomInputView(height: kbdHeight, inset: insetHeight, wvc: wvc)
     addChild(wvc)
 
@@ -148,6 +150,12 @@ class DummyInputViewController: UIInputViewController {
 
     // Perform custom UI setup here
     baseView.load()
+
+    // Nope, no dice when trying it later.
+//  open override func viewDidAppear(_ animated: Bool) {
+//    let baseView = self.inputView as! CustomInputView
+//
+//    super.viewDidAppear(animated)
     baseView.setConstraints()
 
     // Adds a very basic "Next keyboard" button to ensure we can always swap keyboards, even on iPhone SE.
@@ -167,5 +175,9 @@ class DummyInputViewController: UIInputViewController {
 
     self.nextKeyboardButton.leftAnchor.constraint(equalTo: guide.leftAnchor).isActive = true
     self.nextKeyboardButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+  }
+  
+  func forceWebViewReload() {
+    webViewController!.loadKeyboard()
   }
 }
