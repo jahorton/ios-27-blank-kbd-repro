@@ -32,6 +32,8 @@ Inspecting the WKWebView via Safari (labeled "Blank keyboard repro") will demons
 - any edit made to the DOM or CSS will not be reflected to the user
 - hovering over an unrendered element to inspect it will still display its highlighted bounding box
 
+![Inspecting the third text line](./imgs/inspection-bounding.png)
+
 This issue only occurs _within_ the host app; the page will display properly when used as a third-party custom keyboard on the same device.
 
 # Related behaviors and observations
