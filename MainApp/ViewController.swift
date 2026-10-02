@@ -10,13 +10,15 @@ import UIKit
 import OSLog
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var systemInput: UITextField!
   @IBOutlet weak var inAppInput: UITextField!
   @IBOutlet weak var webViewVisible: UILabel!
-  @IBOutlet weak var webViewProcess: UILabel!
+  @IBOutlet weak var webViewIssueArmed: UILabel!
   
   var ivc: DummyInputViewController!
+  
+  var reproStateArmed: Bool = true
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,6 +34,9 @@ class ViewController: UIViewController {
       // Fires every 1/10 sec.
       self.updateStatusText()
     }
+    
+    systemInput.delegate = self
+    inAppInput.delegate = self
   }
   
   func updateStatusText() {
@@ -44,21 +49,28 @@ class ViewController: UIViewController {
     }
     
     if ivc.inputView!.window == nil || ivc.inputView!.isHidden || webView.isHidden {
-      self.webViewVisible.text = "Web view is not visible"
+      self.webViewVisible.text = "App web view is not visible"
     } else {
-      self.webViewVisible.text = "Web view is visible"
+      self.webViewVisible.text = "App web view is visible"
     }
     
     // If the web view has no title/URL but is supposed to be displaying content
-    if webView.title?.isEmpty ?? true && webView.url == nil {
-      self.webViewProcess.text = "Web view process appears dead"
+    if reproStateArmed {
+      self.webViewIssueArmed.text = "Web view repro is armed"
     } else {
-      self.webViewProcess.text = "Web view process appears live"
+      self.webViewIssueArmed.text = "Web view repro not armed"
     }
   }
 
   @IBAction func clearKeyboardPressed(_ sender: Any) {
     clearKeyboard()
+    reproStateArmed = true
+    
+    updateStatusText()
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    reproStateArmed = false
   }
   
   @IBAction func replaceInputView(_ sender: Any) {
