@@ -108,6 +108,19 @@ class DummyInputViewController: UIInputViewController {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  public var hostedPage: HostedPage {
+    get {
+      return webViewController.activePage ?? webViewController.selectedPage
+    }
+    
+    set(value) {
+      let userDefaults = UserDefaults(suiteName: DummyInputViewController.appGroup)!
+      
+      userDefaults.set(value.rawValue, forKey: "hostedPage")
+      webViewController.loadPage()
+    }
+  }
 
   open override func loadView() {
     let wvc = WebViewController()
