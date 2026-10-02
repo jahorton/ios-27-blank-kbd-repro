@@ -48,6 +48,8 @@ The repro state will render the red page like this when armed:
 
 ![Red page with cyan text](./imgs/redBlank.png)
 
+Both page's sourcefiles may be found within the `MainApp/resources/Hosted.bundle` folder.
+
 ## Swapping the active UIResponder
 
 The repro state can be disarmed by simply swapping the active UIResponder.  Note that the UIResponder _must_ be swapped - removing and then re-enabling first-responder status on the same field will _not_ disarm the repro state.
